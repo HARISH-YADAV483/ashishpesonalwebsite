@@ -55,6 +55,15 @@
         min-height: 100vh;
     }
 
+    .righto {
+        display: none;
+
+    }
+
+    .righto2 {
+        display: flex;
+    }
+
 }
 
 @media screen and (max-width : 750px) {
@@ -62,11 +71,20 @@
     .parentu {
         background-size: cover;
         background-position-y: center;
+        background-position-x: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
         min-height: 100vh;
     }
 
+    .righto2 {
+        display: none;
+
+    }
+
+    .righto {
+        display: block;
+    }
 
 }
 

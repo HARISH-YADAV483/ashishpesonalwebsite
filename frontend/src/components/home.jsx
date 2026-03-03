@@ -2,11 +2,18 @@ import './home.css'
 import navbar from '../assets/ashi.png'
 import bag from '../assets/page.jpeg'
 
+
 const Contact = () => (
     <div className="parentu" style={{ backgroundImage: `url(${bag})` }}>
         <div className="parent" >
             <div className="navbar">
                 <div className="lefto"><img src={navbar} alt="golu" className="logo" /></div>
+                <div className="righto2">
+                    <a href="#education" className="nav-link">Education</a>
+                    <a href="#portfolio" className="nav-link">Projects</a>
+                    <a href="#photography" className="nav-link">Photography</a>
+                    <a href="#blogs" className="nav-link">Blogs</a>
+                </div>
                 <div className="righto">
 
                     <label className="hamburger">
