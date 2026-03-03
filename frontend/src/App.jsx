@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Contact from './components/home'
 
 import './App.css'
 
@@ -46,9 +47,10 @@ function App() {
   return (
     <>
 
+      <Contact />
+      
 
-
-      <p>Backend Status: <strong>{backendMessage}</strong></p>
+      {/* <p>Backend Status: <strong>{backendMessage}</strong></p> */}
 
 
     </>

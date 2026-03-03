@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 4em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: rgb(3, 173, 17);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+@media screen and (min-width : 750px) {
+    .parentu {
+        background-size: cover;
+        /* background-position-x: 89px; */
+        background-position-y: -490px;
+        /* background-attachment: fixed; */
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+}
+
+@media screen and (max-width : 750px) {
+
+    .parentu {
+        background-size: cover;
+        background-position-y: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+
+}
+
+@media screen and (min-width : 1024px) {
+
+
+    .logo {
+        height: 60px;
+        width: 60px;
+        margin-left: 14px;
+    }
+
+    .righto {
+        margin-right: 14px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        height: 66px;
+        width: 100vw;
+        align-items: center;
+    }
+
+    .parent {
+        height: 100vh;
+        /* max-width: 80vw; */
+        background-color: rgba(63, 66, 75, 0.6);
+        width: 100vw;
+        height: 100vh;
+        /* display: flex;
+        justify-content: space-between; */
+        /* gap: 80vw; */
+
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        /* align-items: center; */
+    }
+
+    .parent {
+        height: 100vh;
+        /* max-width: 80vw; */
+        background-color: rgba(63, 66, 75, 0.6);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        /* gap: 80vw; */
+    }
+
+    .logo {
+        height: 49px;
+        width: 49px;
+        margin-left: 0px;
+    }
+
+    .righto {
+        margin-right: 4px;
+    }
+}
