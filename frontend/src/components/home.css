@@ -5,6 +5,9 @@
 
 .hamburger {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
 }
 
 .hamburger input {
