@@ -23,10 +23,10 @@
 
 .line {
     fill: none;
-    stroke: rgb(3, 173, 17);
+    stroke: rgb(152, 154, 152);
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-width: 2;
+    stroke-width: 1;
     /* Define the transition for transforming the Stroke */
     transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
         stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -45,8 +45,49 @@
     stroke-dashoffset: -32.42;
 }
 
+
+
 @media screen and (min-width : 750px) {
-    .parentu {
+
+
+    .logo {
+        height: 60px;
+        width: 60px;
+        margin-left: 14px;
+    }
+
+    .righto {
+        margin-right: 14px;
+         display: none;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        height: 66px;
+        max-width: 1424px;
+        align-items: center;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .navbaru{
+        background-color: rgb(26, 32, 44);
+    }
+
+    .parent {
+        height: 100vh;
+        /* max-width: 80vw; */
+              background-color: rgb(76 80 94 / 75%);
+        width: 100vw;
+        height: 100vh;
+        /* display: flex;
+        justify-content: space-between; */
+        /* gap: 80vw; */
+
+    }
+     .parentu {
         background-size: cover;
         /* background-position-x: 89px; */
         background-position-y: -490px;
@@ -55,18 +96,32 @@
         min-height: 100vh;
     }
 
-    .righto {
-        display: none;
-
-    }
+   
 
     .righto2 {
         display: flex;
+        justify-content: space-between;
+        gap: 22px;
+        color: aliceblue;
+    }
+    .nav-link{
+        color: rgb(193, 192, 192);
+        text-decoration: none;
+        font-size: 1.3rem;
+     
+       
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+
     }
 
 }
 
 @media screen and (max-width : 750px) {
+    .navbaru{
+        background-color: rgb(26, 32, 44);
+        height: 50px;
+    }
 
     .parentu {
         background-size: cover;
@@ -79,61 +134,24 @@
 
     .righto2 {
         display: none;
+        
 
     }
 
-    .righto {
-        display: block;
-    }
-
-}
-
-@media screen and (min-width : 1024px) {
-
-
-    .logo {
+    
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
         height: 60px;
-        width: 60px;
-        margin-left: 14px;
-    }
-
-    .righto {
-        margin-right: 14px;
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        height: 66px;
-        width: 100vw;
-        align-items: center;
-    }
-
-    .parent {
-        height: 100vh;
-        /* max-width: 80vw; */
-        background-color: rgba(63, 66, 75, 0.6);
-        width: 100vw;
-        height: 100vh;
-        /* display: flex;
-        justify-content: space-between; */
-        /* gap: 80vw; */
-
-    }
-}
-
-@media screen and (max-width : 1024px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        width: 100vw;
         /* align-items: center; */
     }
 
     .parent {
         height: 100vh;
         /* max-width: 80vw; */
-        background-color: rgba(63, 66, 75, 0.6);
+            background-color: rgb(76 80 94 / 75%);
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -149,5 +167,6 @@
 
     .righto {
         margin-right: 4px;
+         display: block;
     }
 }
