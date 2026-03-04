@@ -4,6 +4,37 @@
     box-sizing: border-box;
 }
 
+.linlu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: rgb(26, 32, 44);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out, visibility 0.4s;
+    visibility: hidden;
+}
+
+.linlu.active {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.nav-lin {
+    text-decoration: none;
+    color: #f9f8f8;
+    margin: 15px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
 body {
     overflow-x: hidden;
 }
