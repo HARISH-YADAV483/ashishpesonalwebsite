@@ -1,6 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .hamburger {
@@ -49,6 +54,25 @@
 
 @media screen and (min-width : 750px) {
 
+    .green {
+        color: green;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        flex: 1;
+        font-size: 4rem;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        color: rgb(212, 212, 213);
+        gap: 2px;
+        margin-left: 5vw;
+
+    }
 
     .logo {
         height: 60px;
@@ -58,7 +82,7 @@
 
     .righto {
         margin-right: 14px;
-         display: none;
+        display: none;
     }
 
     .navbar {
@@ -70,33 +94,46 @@
         align-content: center;
         margin-left: auto;
         margin-right: auto;
-        
+
     }
-    .navbaru{
+
+    .vg {
+        font-size: 3rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        margin-top: 23px;
+
+    }
+
+    .greenu {
+        color: green;
+        font-weight: 300;
+        font-size: 3.5rem;
+    }
+
+    .navbaru {
         background-color: rgb(26, 32, 44);
+        width: 100vw;
     }
 
     .parent {
-        height: 100vh;
+        min-height: 100vh;
         /* max-width: 80vw; */
-              background-color: rgb(76 80 94 / 75%);
+        background-color: rgb(76 80 94 / 75%);
         width: 100vw;
-        height: 100vh;
-        /* display: flex;
-        justify-content: space-between; */
-        /* gap: 80vw; */
-
+        display: flex;
+        flex-direction: column;
     }
-     .parentu {
+
+    .parentu {
         background-size: cover;
-        /* background-position-x: 89px; */
         background-position-y: -490px;
-        /* background-attachment: fixed; */
+        background-attachment: fixed;
         background-repeat: no-repeat;
         min-height: 100vh;
     }
 
-   
+
 
     .righto2 {
         display: flex;
@@ -104,21 +141,22 @@
         gap: 22px;
         color: aliceblue;
     }
-    .nav-link{
+
+    .nav-link {
         color: rgb(193, 192, 192);
         text-decoration: none;
         font-size: 1.3rem;
-     
-       
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
+
+
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
 
     }
 
 }
 
 @media screen and (max-width : 750px) {
-    .navbaru{
+    .navbaru {
         background-color: rgb(26, 32, 44);
         height: 60px;
     }
@@ -134,12 +172,12 @@
 
     .righto2 {
         display: none;
-        
+
 
     }
 
-    
-    
+
+
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -150,14 +188,12 @@
     }
 
     .parent {
-        height: 100vh;
+        min-height: 100vh;
         /* max-width: 80vw; */
-            background-color: rgb(76 80 94 / 75%);
+        background-color: rgb(76 80 94 / 75%);
         width: 100vw;
-        height: 100vh;
         display: flex;
-        justify-content: space-between;
-        /* gap: 80vw; */
+        flex-direction: column;
     }
 
     .logo {
@@ -168,6 +204,32 @@
 
     .righto {
         margin-right: 4px;
-         display: block;
+        display: block;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        font-size: 8vw;
+        font-weight: 100;
+        font-family: "Poppins", sans-serif;
+        color: rgb(212, 212, 213);
+        gap: 2px;
+        margin-left: 5vw;
+    }
+
+    .vg {
+        font-size: 1.2rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        margin-top: 15px;
+    }
+
+    .greenu {
+        color: green;
+        font-weight: 300;
+        font-size: 1.5rem;
     }
 }

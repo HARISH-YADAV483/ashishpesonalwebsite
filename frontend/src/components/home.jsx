@@ -10,9 +10,9 @@ const Contact = () => (
                 <div className="navbar">
                     <div className="lefto"><img src={navbar} alt="golu" className="logo" /></div>
                     <div className="righto2">
-                        <a href="#education" className="nav-link">Education</a>
-                        <a href="#portfolio" className="nav-link">Projects</a>
-                        <a href="#photography" className="nav-link">Photography</a>
+                        <a href="#education" className="nav-link">EDUCATION</a>
+                        <a href="#portfolio" className="nav-link">TRAVEL</a>
+                        <a href="#photography" className="nav-link">GAMING</a>
                         <a href="#blogs" className="nav-link">Blogs</a>
                     </div>
                     <div className="righto">
@@ -27,6 +27,16 @@ const Contact = () => (
                     </div>
                 </div>
             </div>
+
+            <div className="intro">
+                <h1>
+                    I <span className='green'>'</span> M
+                </h1>
+                <h1>ASHISH</h1>
+                <h1>PUHANIYA <span className='green'>.</span></h1>
+                <h2 className='vg'>[ <span className="greenu">B</span>alancing Books, <span className="greenu">G</span>ames, and  <span className="greenu">G</span>oals.]</h2>
+            </div>
+
         </div>
     </div>
 );
