@@ -277,9 +277,9 @@ body {
 
     .studypara {
         font-family: "Poppins", sans-serif;
-        font-size: 1.4rem;
-        line-height: 1;
-        font-weight: lighter;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        font-weight:lighter;
         color: #f9f8f8;
         width: 90vw;
     }
