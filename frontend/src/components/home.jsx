@@ -4,6 +4,7 @@ import navbar from '../assets/ashi.png'
 import bag from '../assets/page.jpeg'
 import collage from '../assets/copy.png'
 import sport from '../assets/sport.jpg'
+import travel from '../assets/travel.jpg'
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -104,26 +105,55 @@ const Contact = () => {
                 <div className="study">
                     <div className="imgage"><img src={collage} alt="ScamShield" className="colu" /></div>
                     <div className="studypara"> <span className="big">Education</span>   &nbsp;has played a vital role in shaping my academic journey. I completed my Bachelor of Science (B.Sc.) from Ramjas College, University of Delhi, where I developed a strong foundation in scientific concepts and analytical thinking. Currently, I am pursuing a Master of Science (M.Sc.) from the University of Delhi to further deepen my knowledge and research skills. My studies have strengthened my problem-solving abilities and commitment to academic excellence.
-                    <div className="button">
-                        <Link to="#"><button className="explore">Explore more</button></Link>
+                        <div className="button">
+                            <Link to="#"><button className="explore">Explore more</button></Link>
+                        </div>
                     </div>
-                    </div>
-                   
-                   
+
+
                 </div>
                 <div className="study sports">
                     <div className="imgage"><img src={sport} alt="ScamShield" className="colu" /></div>
                     <div className="studypara"> <span className="big">Fitness and Sports</span>   &nbsp;play an important role in shaping my lifestyle and mindset. Regular physical activity helps me stay disciplined, energetic, and focused in my daily life. Participating in sports not only improves my strength and endurance but also teaches teamwork, perseverance, and determination. Through fitness and athletics, I continuously challenge myself to grow stronger, maintain a healthy balance, and develop a resilient attitude toward both physical and personal goals.
-                    <div className="button">
+                        <div className="button">
+                            <Link to="#"><button className="explore">Explore more</button></Link>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div className="study">
+                    <div className="imgage"><img src={collage} alt="ScamShield" className="colu" /></div>
+                    <div className="studypara"> <span className="big">Gaming</span>   &nbsp;has always been a space where I enjoy strategy, creativity, and competition. It helps me sharpen my decision-making skills, reflexes, and focus while providing a fun way to relax and connect with others. Through gaming, I experience different worlds, challenges, and teamwork opportunities. It not only entertains me but also develops problem-solving abilities and patience, making it a meaningful hobby that balances both enjoyment and mental engagement.
+                        <div className="button">
+                            <Link to="#"><button className="explore">Explore more</button></Link>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div className="study sports">
+                    <div className="imgage"><img src={travel} alt="ScamShield" className="colu" /></div>
+                    <div className="studypara"> <span className="big">Travels</span>   &nbsp;allow me to explore new places, cultures, and perspectives that broaden my understanding of the world. Each journey teaches something unique, whether it is about people, traditions, or nature. Traveling refreshes my mind and inspires curiosity while creating unforgettable memories. It gives me the chance to step outside my routine, appreciate diversity, and gain experiences that shape my outlook on life and personal growth.
+                        <div className="button">
+                            <Link to="#"><button className="explore">Explore more</button></Link>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div className="study">
+                    <div className="imgage"><img src={collage} alt="ScamShield" className="colu" /></div>
+                    <div className="studypara"> <span className="big">Friends and Family</span>   &nbsp;are the strongest pillars of support in my life. They provide encouragement, motivation, and a sense of belonging during both good and challenging times. Spending time with them strengthens relationships and creates meaningful memories that last a lifetime. Their guidance and companionship help shape my values and character, reminding me of the importance of trust, love, and staying connected with the people who matter most.
                         <Link to="#"><button className="explore">Explore more</button></Link>
                     </div>
-                    </div>
-                   
-                   
                 </div>
-               
+
+
             </div>
         </div>
+        
     );
 };
 
