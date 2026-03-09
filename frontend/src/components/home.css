@@ -49,6 +49,38 @@ body {
 .hamburger input {
     display: none;
 }
+.study{
+    width: 84vw;
+    margin-top: 65px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(232, 182, 88 , 0.7);
+}
+.imgage{
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 43px;
+
+}
+.colu{
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 34px;
+}
+.studypara{
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
+    font: 100;
+    margin-top: 30px;
+    line-height: 1.6;
+}
+.big{
+    font-size: 3rem;
+    color: red;
+}
 
 .hamburger svg {
     /* The size of the SVG defines the overall size */
@@ -84,7 +116,27 @@ body {
 
 
 @media screen and (min-width : 750px) {
+.study{
+    width: 84vw;
+    margin-top: 65px;
+    margin-right: auto;
+    margin-left: auto;
+   background-color: rgb(26, 32, 44, 0.7);
+   border-radius: 34px;
+}
+.imgage{
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 43px;
 
+}
+.studypara{
+     font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #f9f8f8;
+}
     .green {
         color: green;
     }
@@ -150,7 +202,7 @@ body {
     .parent {
         min-height: 100vh;
         /* max-width: 80vw; */
-        background-color: rgb(76 80 94 / 75%);
+        background-color: rgb(76 80 94 / 65%);
         width: 100vw;
         display: flex;
         flex-direction: column;
@@ -187,6 +239,34 @@ body {
 }
 
 @media screen and (max-width : 750px) {
+    .study{
+    width: 100vw;
+    margin-top: 65px;
+    margin-right: auto;
+    margin-left: auto;
+  
+ background-color: rgb(26, 32, 44, 0.7);
+}
+.imgage{
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 23px;
+
+}
+.colu{
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 23px;
+}
+.studypara{
+     font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  color: #f9f8f8;
+  width: 90vw;
+}
     .navbaru {
         background-color: rgb(26, 32, 44);
         height: 60px;
@@ -221,7 +301,7 @@ body {
     .parent {
         min-height: 100vh;
         /* max-width: 80vw; */
-        background-color: rgb(76 80 94 / 75%);
+        background-color: rgb(76 80 94 / 65%);
         width: 100vw;
         display: flex;
         flex-direction: column;

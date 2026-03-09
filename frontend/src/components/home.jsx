@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './home.css'
 import navbar from '../assets/ashi.png'
 import bag from '../assets/page.jpeg'
+import collage from '../assets/study.jpg'
 
 const Contact = () => {
     const [showDiv, setShowDiv] = useState(false);
@@ -49,7 +50,10 @@ const Contact = () => {
                     <h1>PUHANIYA <span className='green'>.</span></h1>
                     <h2 className='vg'>[ <span className="greenu">B</span>alancing Books, <span className="greenu">G</span>ames, and  <span className="greenu">G</span>oals.]</h2>
                 </div>
-
+                <div className="study">
+<div className="imgage"><img src={collage} alt="ScamShield" className="colu" /></div>
+<div className="studypara"> <span className="big">Education</span>   &nbsp;has played a vital role in shaping my academic journey. I completed my Bachelor of Science (B.Sc.) from Ramjas College, University of Delhi, where I developed a strong foundation in scientific concepts and analytical thinking. Currently, I am pursuing a Master of Science (M.Sc.) from the University of Delhi to further deepen my knowledge and research skills. My studies have strengthened my problem-solving abilities and commitment to academic excellence.</div>
+                </div>
             </div>
         </div>
     );
