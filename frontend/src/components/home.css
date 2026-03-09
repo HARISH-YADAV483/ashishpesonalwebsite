@@ -245,15 +245,15 @@ body {
 
     }
 
-    .card{
-    display: none !important;
-}
+    .card {
+        display: none !important;
+    }
 }
 
 @media screen and (max-width : 750px) {
     .study {
         width: 100vw;
-        margin-top: 65px;
+        margin-top: 94px;
         margin-right: auto;
         margin-left: auto;
 
@@ -378,58 +378,60 @@ body {
 
 /* for all social containers*/
 .socialContainer {
-    width: 52px;
-    height: 52px;
-    background-color: rgb(44, 44, 44);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transition-duration: .3s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    backdrop-filter: blur(5px);
 }
 
-/* instagram*/
+/* realistic hover lift and glow */
+.socialContainer:hover {
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* instagram realism: orange-to-purple gradient */
 .containerOne:hover {
-    background-color: #d62976;
-    transition-duration: .3s;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0 0 20px rgba(214, 36, 159, 0.6);
 }
 
-/* twitter*/
+/* X / Twitter realistic sleek look */
 .containerTwo:hover {
-    background-color: #00acee;
-    transition-duration: .3s;
+    background: linear-gradient(135deg, #14171a 0%, #000000 100%);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* linkdin*/
+/* LinkedIn professional blue gradient */
 .containerThree:hover {
-    background-color: #0072b1;
-    transition-duration: .3s;
+    background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+    box-shadow: 0 0 20px rgba(0, 119, 181, 0.6);
 }
 
-/* WhatsApp / Mail*/
+/* Mail / Professional yellow/red gradient or Gmail style */
 .containerFour:hover {
-    background-color: #fbbc05;
-    transition-duration: .3s;
+    background: linear-gradient(135deg, #ea4335 0%, #c5221f 100%);
+    box-shadow: 0 0 20px rgba(234, 67, 53, 0.6);
 }
 
 .socialSvg {
-    width: 17px;
+    width: 22px;
     fill: white;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
 }
 
 .socialContainer:hover .socialSvg {
-    animation: slide-in-top 0.3s both;
-}
-
-@keyframes slide-in-top {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
