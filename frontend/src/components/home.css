@@ -355,7 +355,10 @@ body {
 
         background-color: rgb(26, 32, 44, 0.7);
     }
+.sports{
 
+    margin-top: 33px !important;
+}
     .imgage {
         width: 90vw;
         margin-right: auto;
