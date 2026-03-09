@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Contact from './components/home'
-
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import './App.css'
 
 function App() {
@@ -45,15 +45,15 @@ function App() {
   // }, []);
 
   return (
-    <>
+    <BrowserRouter>
 
       <Contact />
       
 
       {/* <p>Backend Status: <strong>{backendMessage}</strong></p> */}
+</BrowserRouter>
 
-
-    </>
+  
   )
 }
 

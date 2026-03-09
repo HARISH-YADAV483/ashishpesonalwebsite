@@ -117,7 +117,58 @@ body {
     stroke-dasharray: 20 300;
     stroke-dashoffset: -32.42;
 }
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
 
+.explore {
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #8d1303 0%, #491515 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.explore::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(162, 68, 68, 0.1);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.explore:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(126, 51, 51, 0.4);
+    letter-spacing: 3px;
+}
+
+.explore:hover::before {
+    width: 100%;
+}
+
+.explore:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 
 
 @media screen and (min-width : 750px) {

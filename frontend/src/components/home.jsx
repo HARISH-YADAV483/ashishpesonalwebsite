@@ -3,6 +3,7 @@ import './home.css'
 import navbar from '../assets/ashi.png'
 import bag from '../assets/page.jpeg'
 import collage from '../assets/study.jpg'
+import { Link } from "react-router-dom";
 
 const Contact = () => {
     const [showDiv, setShowDiv] = useState(false);
@@ -102,6 +103,9 @@ const Contact = () => {
                 <div className="study">
                     <div className="imgage"><img src={collage} alt="ScamShield" className="colu" /></div>
                     <div className="studypara"> <span className="big">Education</span>   &nbsp;has played a vital role in shaping my academic journey. I completed my Bachelor of Science (B.Sc.) from Ramjas College, University of Delhi, where I developed a strong foundation in scientific concepts and analytical thinking. Currently, I am pursuing a Master of Science (M.Sc.) from the University of Delhi to further deepen my knowledge and research skills. My studies have strengthened my problem-solving abilities and commitment to academic excellence.</div>
+                    <div className="button">
+                    <Link to="#"><button className="explore">Explore more</button></Link>
+                </div>
                 </div>
             </div>
         </div>
