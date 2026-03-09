@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .linlu {
@@ -56,6 +57,16 @@ body {
     margin-right: auto;
     margin-left: auto;
     background-color: rgb(232, 182, 88, 0.7);
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+    border-top: 3px solid rgb(193, 194, 193);
+}
+@keyframes fadeLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        transform: translateY(0);
+    }
 }
 
 .imgage {
@@ -63,6 +74,11 @@ body {
     margin-right: auto;
     margin-left: auto;
     margin-top: 43px;
+    /* opacity: 0;
+    transform: translateX(-300px);
+    animation: fadeLeft 3s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%; */
 
 }
 
@@ -80,6 +96,11 @@ body {
     font: 100;
     margin-top: 30px;
     line-height: 1.6;
+    /* opacity: 0;
+    transform: translateX(300px);
+    animation: fadeLeft 2s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%; */
 }
 
 .big {
@@ -173,28 +194,52 @@ body {
 
 @media screen and (min-width : 750px) {
     .study {
-        width: 84vw;
+        width: 90vw;
         margin-top: 65px;
         margin-right: auto;
         margin-left: auto;
         background-color: rgb(26, 32, 44, 0.7);
         border-radius: 34px;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+    transform: translateX(-300px);
+    animation: fadeLeft 5s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+
+    }
+    .sports{
+           opacity: 0 ;
+    transform: translateX(300px) ;
+    animation: fadeLeft 3s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+
     }
 
     .imgage {
-        width: 80vw;
+        width: 25vw;
         margin-right: auto;
         margin-left: auto;
         margin-top: 43px;
+         /* animation-range: entry 0% cover 70%; */
 
     }
 
     .studypara {
         font-family: "Poppins", sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         line-height: 1.6;
         font-weight: 100;
+        width: 50vw;
         color: #f9f8f8;
+         /* animation-range: entry 0% cover 60%; */
+    }
+     .colu {
+        width: 30vw;
+        
+        border-radius: 23px;
     }
 
     .green {
@@ -316,6 +361,11 @@ body {
         margin-right: auto;
         margin-left: auto;
         margin-top: 23px;
+opacity: 0;
+    transform: translateY(-300px);
+    animation: fadeLeft 3s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 
     }
 
@@ -333,6 +383,11 @@ body {
         font-weight:lighter;
         color: #f9f8f8;
         width: 90vw;
+         opacity: 0;
+    transform: translateY(300px);
+    animation: fadeLeft 2s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
     }
 
     .navbaru {
