@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './home.css'
 import navbar from '../assets/ashi.png'
 import bag from '../assets/page.jpeg'
-import collage from '../assets/study.jpg'
+import collage from '../assets/image.png'
 import { Link } from "react-router-dom";
 
 const Contact = () => {
