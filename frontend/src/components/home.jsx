@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './home.css'
+import './contact.css'
 import navbar from '../assets/ashi.png'
 import bag from '../assets/page.jpeg'
 import collage from '../assets/copy.png'
@@ -143,17 +144,57 @@ const Contact = () => {
 
                 </div>
 
-                <div className="study">
+                {/* <div className="study">
                     <div className="imgage"><img src={collage} alt="ScamShield" className="colu" /></div>
                     <div className="studypara"> <span className="big">Friends and Family</span>   &nbsp;are the strongest pillars of support in my life. They provide encouragement, motivation, and a sense of belonging during both good and challenging times. Spending time with them strengthens relationships and creates meaningful memories that last a lifetime. Their guidance and companionship help shape my values and character, reminding me of the importance of trust, love, and staying connected with the people who matter most.
                         <Link to="#"><button className="explore">Explore more</button></Link>
                     </div>
+                </div> */}
+                <div className="study">
+                    <div className="imgage"><img src={collage} alt="ScamShield" className="colu" /></div>
+                    <div className="studypara"> <span className="big">Friends and Family</span>   &nbsp;are the strongest pillars of support in my life. They provide encouragement, motivation, and a sense of belonging during both good and challenging times. Spending time with them strengthens relationships and creates meaningful memories that last a lifetime. Their guidance and companionship help shape my values and character, reminding me of the importance of trust, love, and staying connected with the people who matter most.
+                        
+                        <div className="button">
+                            <Link to="#"><button className="explore">Explore more</button></Link>
+                        </div>
+                    </div>
+
+
                 </div>
 
 
+                <div className="contact" id="contact">
+                    <div className="details">
+                        <div className="parac">
+                            <h1>Contact</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, officia necessitatibus possimus nesciunt repellat mollitia. Beatae error tempora officiis, dolores illo hic corrupti non repellendus alias obcaecati at totam eaque.</p>
+                            <p>+91 8708289086
+                                <br />
+                                ashishpuhaniya@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div className="inputs">
+                        <div className="name">
+                            <input type="text" placeholder="Name" />
+                            <input type="text" placeholder="Lastname" />
+
+                        </div>
+                        <div className="email">
+                            <input type="text" placeholder="email" />
+                        </div>
+                        <div className="phone">
+                            <input type="text" placeholder="phone" />
+                        </div>
+                        <div className="message">
+                            <input type="text" placeholder="message" />
+                        </div>
+                        <div className="submit"><button >Send</button></div>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
     );
 };
 

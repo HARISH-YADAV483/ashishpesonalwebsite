@@ -1,0 +1,137 @@
+.contact {
+     background-color: rgb(26, 32, 44);
+    color: white;
+    padding: 80px 10%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 34px;
+}
+
+.details {
+    flex: 1;
+}
+
+.parac h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.parac p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.inputs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inputs .name {
+    display: flex;
+    gap: 20px;
+}
+
+.inputs input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.inputs input:focus {
+    border-color: #00d2ff;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(73, 125, 68, 0.3);
+}
+
+.inputs .message input {
+    padding-bottom: 80px;
+   
+}
+
+.submit button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00d2ff 0%, #346d2d 100%);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4);
+}
+
+.submit button:active {
+    transform: translateY(0);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .contact {
+        padding: 60px 5%;
+        gap: 30px;
+    }
+
+    .parac h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .details {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .inputs {
+        padding: 30px 20px;
+    }
+
+    .inputs .name {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .parac h1 {
+        font-size: 2rem;
+    }
+
+    .parac p {
+        font-size: 1rem;
+    }
+
+    .inputs input {
+        padding: 12px 15px;
+    }
+}
