@@ -1,0 +1,135 @@
+.admin-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #070707;
+    color: white;
+}
+
+.admin-login-form {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.admin-login-form h2 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.admin-login-form input {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 16px;
+}
+
+.admin-login-form input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.admin-login-form button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-login-form button:hover {
+    background-color: #45a049;
+}
+
+.admin-dashboard {
+    padding: 100px 5%;
+    min-height: 100vh;
+    background-color: #070707;
+    color: white;
+}
+
+.admin-dashboard h2 {
+    color: #4CAF50;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.messages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.message-card {
+    background-color: #1a1a1a;
+    border-left: 4px solid #4CAF50;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+.message-card:hover {
+    transform: translateY(-5px);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.message-header strong {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.message-header span {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.message-details {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.message-details p {
+    margin: 5px 0;
+}
+
+.message-details a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.message-details a:hover {
+    text-decoration: underline;
+}
+
+.message-body {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ddd;
+}

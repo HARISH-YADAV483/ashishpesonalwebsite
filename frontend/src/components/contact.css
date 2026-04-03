@@ -54,12 +54,19 @@
     font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .inputs input:focus {
     border-color: #00d2ff;
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 15px rgba(73, 125, 68, 0.3);
+    outline: none;
+}
+
+.submit button:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .inputs .message input {

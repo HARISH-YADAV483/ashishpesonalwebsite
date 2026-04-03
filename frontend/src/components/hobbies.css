@@ -1,0 +1,355 @@
+/* Hobbies Page Styling */
+.hobbies-page {
+    padding: 120px 5% 60px;
+    background-color: #0d0d0d;
+    min-height: 100vh;
+    color: white;
+}
+
+.hobbies-hero {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hobbies-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hobbies-hero p {
+    font-size: 1.2rem;
+    color: #888;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.green {
+    color: #4CAF50; /* Primary green from theme */
+}
+
+/* Admin Form */
+.admin-hobby-form {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.05);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.admin-hobby-form h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.admin-hobby-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-hobby-form .form-group {
+    display: flex;
+    gap: 15px;
+}
+
+.admin-hobby-form input, 
+.admin-hobby-form textarea {
+    padding: 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.admin-hobby-form input:focus, 
+.admin-hobby-form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.admin-hobby-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    align-self: flex-start;
+}
+
+.admin-hobby-form button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.upload-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px dashed #444;
+}
+
+.upload-group label {
+    font-size: 0.9rem;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.upload-group input[type="file"] {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+}
+
+.or-divider {
+    text-align: center;
+    position: relative;
+    margin: 5px 0;
+}
+
+.or-divider::before, 
+.or-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #444;
+}
+
+.or-divider::before { left: 0; }
+.or-divider::after { right: 0; }
+
+.or-divider span {
+    font-size: 0.8rem;
+    color: #666;
+    background-color: #222;
+    padding: 0 10px;
+    position: relative;
+}
+
+.colu {
+    width: 100%;
+    border-radius: 34px;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.big {
+    font-size: 3.5rem;
+    color: #4CAF50; /* Using your signature green */
+    font-weight: 600;
+}
+
+.back-btn {
+    background-color: transparent;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateX(-5px);
+}
+
+/* Home-style Sections for Hobbies */
+.hobbies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+}
+
+.study {
+    width: 84vw;
+    margin-top: 65px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(26, 32, 44, 0.7); 
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+    border-top: 3px solid rgb(193, 194, 193);
+    padding: 30px 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+
+.studypara {
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Poppins", sans-serif;
+    margin-top: 30px;
+    line-height: 1.6;
+    color: #f9f8f8;
+    font-size: 1.1rem;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-text {
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.collapsed .description-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.read-full-btn {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: fit-content;
+}
+
+.read-full-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.delete-btn.minimal {
+    padding: 5px 15px;
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.delete-btn.minimal:hover {
+    opacity: 1;
+}
+
+.focus-view {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Desktop Styles */
+@media screen and (min-width : 750px) {
+    .study {
+        width: 90vw;
+        border-radius: 34px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 40px;
+    }
+
+    .imgage {
+        width: 35vw;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .studypara {
+        width: 50vw;
+        margin: 0;
+        padding-left: 40px;
+    }
+
+    .focus-view .study {
+        align-items: center;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width : 750px) {
+    .study {
+        width: 100%;
+        margin-top: 40px;
+        border-radius: 12px; /* Adding slight radius to look better when not edge-to-edge */
+        border-top: 2px solid #333;
+    }
+
+    .imgage, .studypara {
+        width: 95%; /* Taking most of the card width */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .colu {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        max-height: 250px;
+        border-radius: 12px;
+    }
+
+    .big {
+        font-size: 2.5rem;
+    }
+}
+
+.no-hobbies {
+    text-align: center;
+    color: #555;
+    font-size: 1.5rem;
+    margin-top: 100px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    .hobbies-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .admin-hobby-form .form-group {
+        flex-direction: column;
+    }
+}

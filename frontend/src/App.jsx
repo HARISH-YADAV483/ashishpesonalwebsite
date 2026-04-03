@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Navbar from './components/Navbar'
 import Contact from './components/home'
-import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import Admin from './components/Admin'
+import Hobbies from './components/Hobbies'
+import Education from './components/education'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
-
+import Sport from './components/sport'
+import Gaming from './components/gaming'
+import Travel from './components/travel'
 function App() {
 
   const [backendMessage, setBackendMessage] = useState('')
@@ -16,44 +22,25 @@ function App() {
         setBackendMessage(response.data.message)
       } catch (error) {
         console.error('Error fetching data from backend:', error)
-        setBackendMessage('Failed to connect to  to backend')
+        setBackendMessage('Failed to connect to backend')
       }
     }
     fetchMessage()
   }, [])
 
-
-  //   useEffect(() => {
-  //   const fetchMessage = async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:5000/api/test');
-
-  //       if (!response.ok) {
-  //         throw new Error(`HTTP error! Status: ${response.status}`);
-  //       }
-
-  //       const data = await response.json();
-  //       setBackendMessage(data.message);
-
-  //     } catch (error) {
-  //       console.error('Error fetching data from backend:', error);
-  //       setBackendMessage('Failed to connect to backend');
-  //     }
-  //   };
-
-  //   fetchMessage();
-  // }, []);
-
   return (
     <BrowserRouter>
-
-      <Contact />
-      
-
-      {/* <p>Backend Status: <strong>{backendMessage}</strong></p> */}
-</BrowserRouter>
-
-  
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Contact />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/hobbies" element={<Hobbies />} />
+        <Route path="/educ" element={<Education />} />
+        <Route path="/sport" element={<Sport />} />
+        <Route path="/game" element={<Gaming />} />
+        <Route path="/travel" element={<Travel />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
