@@ -10,6 +10,8 @@ import './App.css'
 import Sport from './components/sport'
 import Gaming from './components/gaming'
 import Travel from './components/travel'
+import { API_URL } from './config'
+
 function App() {
 
   const [backendMessage, setBackendMessage] = useState('')
@@ -17,8 +19,9 @@ function App() {
   useEffect(() => {
     const fetchMessage = async () => {
       try {
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5005'
-        const response = await axios.get(`${apiUrl}/api/test`)
+        const response = await axios.get(`${API_URL}/api/test`, {
+          headers: { 'ngrok-skip-browser-warning': '69420' }
+        })
         setBackendMessage(response.data.message)
       } catch (error) {
         console.error('Error fetching data from backend:', error)

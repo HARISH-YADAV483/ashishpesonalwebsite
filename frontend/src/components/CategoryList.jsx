@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_URL } from '../config';
 import './hobbies.css';
 
 const CategoryList = ({ category }) => {
@@ -20,7 +21,9 @@ const CategoryList = ({ category }) => {
 
     const fetchHobbies = async () => {
         try {
-            const res = await fetch(`http://localhost:5005/api/hobbies?category=${category}`);
+            const res = await fetch(`${API_URL}/api/hobbies?category=${category}`, {
+                headers: { 'ngrok-skip-browser-warning': '69420' }
+            });
             const data = await res.json();
             setHobbies(data);
         } catch (error) {
@@ -51,8 +54,9 @@ const CategoryList = ({ category }) => {
                 formData.append('imageUrl', newHobby.imageUrl);
             }
 
-            const res = await fetch('http://localhost:5005/api/hobbies', {
+            const res = await fetch(`${API_URL}/api/hobbies`, {
                 method: 'POST',
+                headers: { 'ngrok-skip-browser-warning': '69420' },
                 body: formData,
             });
             
@@ -77,8 +81,9 @@ const CategoryList = ({ category }) => {
         try {
             const storedId = localStorage.getItem('adminId');
             const storedPass = localStorage.getItem('adminPassword');
-            const res = await fetch(`http://localhost:5005/api/hobbies/${id}?adminId=${storedId}&password=${storedPass}`, {
+            const res = await fetch(`${API_URL}/api/hobbies/${id}?adminId=${storedId}&password=${storedPass}`, {
                 method: 'DELETE',
+                headers: { 'ngrok-skip-browser-warning': '69420' }
             });
             if (res.ok) {
                 setHobbies(hobbies.filter(h => h._id !== id));

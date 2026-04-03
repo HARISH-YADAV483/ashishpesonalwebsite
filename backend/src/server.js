@@ -64,7 +64,7 @@ app.post('/api/hobbies', upload.single('image'), async (req, res) => {
         // Image URL from local upload if present, otherwise from URL field if it still exists (optional)
         let imageUrl = "";
         if (req.file) {
-            imageUrl = `http://localhost:5005/uploads/${req.file.filename}`;
+            imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
         } else if (req.body.imageUrl) {
             imageUrl = req.body.imageUrl;
         }

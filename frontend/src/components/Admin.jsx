@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config';
 import './admin.css';
 
 const Admin = () => {
@@ -30,9 +31,12 @@ const Admin = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:5005/api/admin/login', {
+            const res = await fetch(`${API_URL}/api/admin/login`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': '69420'
+                },
                 body: JSON.stringify({ adminId, password }),
             });
             const data = await res.json();
@@ -55,7 +59,9 @@ const Admin = () => {
 
     const fetchMessages = async () => {
         try {
-            const res = await fetch('http://localhost:5005/api/contacts');
+            const res = await fetch(`${API_URL}/api/contacts`, {
+                headers: { 'ngrok-skip-browser-warning': '69420' }
+            });
             const data = await res.json();
             setMessages(data);
         } catch (error) {
