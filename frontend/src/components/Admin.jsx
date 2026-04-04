@@ -99,8 +99,10 @@ const Admin = () => {
 
     return (
         <div className="admin-dashboard">
+             <button onClick={handleLogout}>logout</button>
             <h2>Contact Submissions</h2>
             <div className="messages-grid">
+               
                 {messages.length === 0 ? (
                     <p>No messages yet.</p>
                 ) : (
