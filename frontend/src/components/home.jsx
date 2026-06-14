@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './home.css'
 import './contact.css'
 import navbar from '../assets/ashi.png'
@@ -13,6 +13,14 @@ import { Link } from "react-router-dom";
 import { API_URL } from '../config';
 
 const Contact = () => {
+    // Track visit on mount (fire-and-forget)
+    useEffect(() => {
+        fetch(`${API_URL}/api/track-visit`, {
+            method: 'POST',
+            headers: { 'ngrok-skip-browser-warning': '69420' }
+        }).catch(() => {}); // silently fail if backend is down
+    }, []);
+
     const [formData, setFormData] = useState({
         name: '',
         lastname: '',

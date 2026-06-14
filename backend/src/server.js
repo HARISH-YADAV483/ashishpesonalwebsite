@@ -31,6 +31,70 @@ const upload = multer({ storage: storage });
 
 const Contact = require('./models/contact');
 const Hobby = require('./models/hobby');
+const Visitor = require('./models/visitor');
+
+// Visitor tracking middleware — records unique visitors (by IP) once per day
+app.use(async (req, res, next) => {
+    // Only track page-level hits (skip API calls themselves to avoid double counting)
+    if (req.path === '/' || req.path === '/api/track-visit') {
+        try {
+            const ip =
+                req.headers['x-forwarded-for']?.split(',')[0].trim() ||
+                req.socket.remoteAddress ||
+                'unknown';
+            const date = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+            await Visitor.updateOne({ ip, date }, { $set: { ip, date } }, { upsert: true });
+        } catch (_) { /* silently ignore duplicate key errors */ }
+    }
+    next();
+});
+
+// Explicit visit tracking endpoint called from frontend
+app.post('/api/track-visit', async (req, res) => {
+    try {
+        const ip =
+            req.headers['x-forwarded-for']?.split(',')[0].trim() ||
+            req.socket.remoteAddress ||
+            'unknown';
+        const date = new Date().toISOString().slice(0, 10);
+        await Visitor.updateOne({ ip, date }, { $set: { ip, date } }, { upsert: true });
+        res.json({ success: true });
+    } catch (error) {
+        res.status(500).json({ error: 'Tracking failed.' });
+    }
+});
+
+// Get visitor stats (admin only)
+app.get('/api/visitors', async (req, res) => {
+    try {
+        const { adminId, password } = req.query;
+        const ADMIN_ID = process.env.ADMIN_ID || 'ashish_admin';
+        const ADMIN_PASS = process.env.ADMIN_PASS || 'ashish@123';
+
+        if (adminId !== ADMIN_ID || password !== ADMIN_PASS) {
+            return res.status(401).json({ error: 'Unauthorized.' });
+        }
+
+        const totalVisitors = await Visitor.countDocuments();
+
+        const today = new Date().toISOString().slice(0, 10);
+        const todayVisitors = await Visitor.countDocuments({ date: today });
+
+        // Last 7 days breakdown
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
+        const dailyStats = await Visitor.aggregate([
+            { $match: { date: { $gte: sevenDaysAgo.toISOString().slice(0, 10) } } },
+            { $group: { _id: '$date', count: { $sum: 1 } } },
+            { $sort: { _id: 1 } }
+        ]);
+
+        res.json({ totalVisitors, todayVisitors, dailyStats });
+    } catch (error) {
+        console.error('Visitor stats error:', error.message);
+        res.status(500).json({ error: 'Failed to fetch visitor stats.' });
+    }
+});
 
 // Hobbies routes
 app.get('/api/hobbies', async (req, res) => {
