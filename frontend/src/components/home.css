@@ -53,13 +53,35 @@ body {
 
 .study {
     width: 84vw;
-    margin-top: 65px;
+    margin-top: 60px;
     margin-right: auto;
     margin-left: auto;
-    background-color: rgb(232, 182, 88, 0.7);
-    border-top-left-radius: 23px;
-    border-top-right-radius: 23px;
-    border-top: 3px solid rgb(193, 194, 193);
+    background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.4s ease;
+}
+
+.study:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.study::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #e8b658, #d94f4f, #7b61ff, #00c9a7);
+    border-radius: 28px 28px 0 0;
+    opacity: 0.85;
 }
 @keyframes fadeLeft {
     to {
@@ -73,39 +95,44 @@ body {
     width: 80vw;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 43px;
-    /* opacity: 0;
-    transform: translateX(-300px);
-    animation: fadeLeft 3s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%; */
-
+    margin-top: 36px;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .colu {
-    width: 80vw;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 34px;
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.study:hover .colu {
+    transform: scale(1.04);
 }
 
 .studypara {
     width: 80vw;
     margin-right: auto;
     margin-left: auto;
-    font: 100;
-    margin-top: 30px;
-    line-height: 1.6;
-    /* opacity: 0;
-    transform: translateX(300px);
-    animation: fadeLeft 2s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%; */
+    margin-top: 24px;
+    line-height: 1.7;
+    padding-bottom: 8px;
 }
 
 .big {
-    font-size: 3rem;
-    color: red;
+    display: block;
+    font-size: 1.9rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #f5c842 0%, #f57c42 50%, #e8445a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    line-height: 1.2;
 }
 
 .hamburger svg {
@@ -140,106 +167,107 @@ body {
 }
 .button {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 22px;
+    padding-bottom: 28px;
 }
 
 .explore {
-    padding: 14px 40px;
-    font-size: 18px;
+    padding: 12px 34px;
+    font-size: 0.88rem;
     font-weight: 600;
-    color: #ffffff;
-    background: linear-gradient(135deg, #8d1303 0%, #491515 100%);
+    color: #fff;
+    background: linear-gradient(135deg, #f5c842 0%, #e8445a 100%);
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 6px 20px rgba(232, 68, 90, 0.35);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     position: relative;
     overflow: hidden;
     z-index: 1;
+    font-family: "Poppins", sans-serif;
 }
 
-.explore::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: rgba(162, 68, 68, 0.1);
-    transition: all 0.4s ease;
-    z-index: -1;
+.explore::after {
+    content: '→';
+    margin-left: 6px;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 .explore:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(126, 51, 51, 0.4);
-    letter-spacing: 3px;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 28px rgba(232, 68, 90, 0.5);
+    letter-spacing: 2px;
 }
 
-.explore:hover::before {
-    width: 100%;
+.explore:hover::after {
+    transform: translateX(4px);
 }
 
 .explore:active {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 
 @media screen and (min-width : 750px) {
     .study {
-        width: 90vw;
-        margin-top: 65px;
+        width: 88vw;
+        margin-top: 60px;
         margin-right: auto;
         margin-left: auto;
-        background-color: rgb(26, 32, 44, 0.7);
-        border-radius: 34px;
         display: flex;
-        justify-content: space-between;
+        align-items: stretch;
+        gap: 0;
+        border-radius: 28px;
         opacity: 0;
-    transform: translateX(-300px);
-    animation: fadeLeft 5s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-
+        transform: translateX(-60px);
+        animation: fadeLeft 0.9s ease forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+        padding: 0;
+        overflow: hidden;
     }
-    .sports{
-           opacity: 0 ;
-    transform: translateX(300px) ;
-    animation: fadeLeft 3s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
 
+    .sports {
+        opacity: 0;
+        transform: translateX(60px);
+        animation: fadeLeft 0.9s ease forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
     }
 
     .imgage {
-        width: 25vw;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 43px;
-         /* animation-range: entry 0% cover 70%; */
-
+        width: 38%;
+        min-width: 280px;
+        flex-shrink: 0;
+        margin: 0;
+        border-radius: 0;
+        overflow: hidden;
+        max-height: 340px;
     }
 
     .studypara {
         font-family: "Poppins", sans-serif;
-        font-size: 1.2rem;
-        line-height: 1.6;
-        font-weight: 100;
-        width: 50vw;
-        color: #f9f8f8;
-         /* animation-range: entry 0% cover 60%; */
+        font-size: 1.05rem;
+        line-height: 1.75;
+        font-weight: 300;
+        width: auto;
+        flex: 1;
+        color: rgba(240,240,245,0.9);
+        padding: 36px 42px 0 42px;
     }
-     .colu {
-        width: 30vw;
-        
-        border-radius: 23px;
+
+    .colu {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
     }
 
     .green {
@@ -352,51 +380,51 @@ body {
 
 @media screen and (max-width : 750px) {
     .study {
-        width: 100vw;
-        margin-top: 94px;
+        width: 92vw;
+        margin-top: 48px;
         margin-right: auto;
         margin-left: auto;
-
-        background-color: rgb(26, 32, 44, 0.7);
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
+        border-radius: 24px;
+        padding-bottom: 8px;
     }
-.sports{
 
-    margin-top: 33px !important;
-}
+    .sports {
+        margin-top: 36px !important;
+    }
+
     .imgage {
-        width: 90vw;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 23px;
-opacity: 0;
-    transform: translateY(-300px);
-    animation: fadeLeft 3s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        overflow: hidden;
+        max-height: 220px;
+        opacity: 0;
+        transform: translateY(-40px);
+        animation: fadeLeft 0.7s ease forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
     }
 
     .colu {
-        width: 90vw;
-        margin-right: auto;
-        margin-left: auto;
-        border-radius: 23px;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 0;
     }
 
     .studypara {
         font-family: "Poppins", sans-serif;
-        font-size: 1.2rem;
-        line-height: 1.3;
-        font-weight: 200;
-        color: #f9f8f8;
-        width: 90vw;
-         opacity: 0;
-    transform: translateY(300px);
-    animation: fadeLeft 2s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+        font-size: 1rem;
+        line-height: 1.55;
+        font-weight: 300;
+        color: rgba(240,240,245,0.9);
+        width: 85vw;
+        margin: 20px auto 0 auto;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeLeft 0.7s ease forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
     }
 
     .navbaru {
@@ -559,3 +587,305 @@ opacity: 0;
     transform: scale(1.1);
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
+
+/* ====================================================
+   EDITORIAL CARD GRID
+   • Image: absolutely positioned, floats ABOVE card background
+   • Badge: absolutely positioned, bleeds LEFT of card
+   ==================================================== */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 84vw;
+    margin: 0 auto 90px auto;
+    padding-top: 30px;    /* space for the image pop up */
+    padding-left: 30px;   /* room for badges that pop left  */
+}
+
+/* ---- Base card wrapper (Transparent!) ---- */
+.study-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+    overflow: visible;
+    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.study-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ---- The actual painted card background ---- */
+.study-card::before {
+    content: '';
+    position: absolute;
+    top: 65px;             /* Starts 65px DOWN, allowing the image at top: 0 to overhang! */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Modern glassmorphic gradient instead of flat color */
+    background: linear-gradient(145deg, rgba(32, 42, 60, 0.8) 0%, rgba(15, 22, 35, 0.95) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    /* Subtle inner glow and outer shadow for premium depth */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12), 
+                0 15px 40px rgba(0, 0, 0, 0.5);
+    z-index: 0;            /* Behind everything */
+    transition: box-shadow 0.45s ease, background 0.45s ease;
+}
+
+.study-card:hover::before {
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 
+                0 28px 60px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(145deg, rgba(38, 50, 72, 0.85) 0%, rgba(18, 25, 40, 0.95) 100%);
+}
+
+/* ---- Image — placed at the top of the wrapper, overhangs the ::before ---- */
+.card-img-wrap {
+    position: absolute;
+    top: 0px;              /* At wrapper's top, meaning it overhangs the ::before by 65px! */
+    left: 16px;
+    right: 16px;
+    height: 195px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65);
+    z-index: 3;
+    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.45s ease;
+}
+
+.study-card:hover .card-img-wrap {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.75);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.study-card:hover .card-img {
+    transform: scale(1.08);
+}
+
+/* ---- Badge — pops OUT to the LEFT of card ---- */
+.card-badge {
+    position: absolute;
+    left: -22px;           /* bleeds beyond the card's left edge */
+    top: 156px;            /* overlaps image and card background */
+    width: auto;
+    max-width: 80%;
+    padding: 12px 24px 12px 20px;
+    z-index: 4;
+    border-radius: 0 8px 8px 0;
+    /* Frosted glass badge */
+    background: rgba(45, 55, 80, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 6px 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    line-height: 1.3;
+    display: block;
+    white-space: nowrap;
+}
+
+/* ---- Body — content pushed down to clear image ---- */
+.card-body-content {
+    flex: 1;
+    margin-top: 215px;     /* clear the 195px image + gap */
+    padding: 24px 28px 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    z-index: 1;            /* Above the ::before background */
+}
+
+.card-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.94rem;
+    line-height: 1.8;
+    font-weight: 300;
+    color: rgba(240, 242, 255, 0.75);
+    margin: 0;
+    flex: 1;
+}
+
+/* ---- Inline CTA ---- */
+.card-explore {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+    box-shadow: none;
+    margin-top: auto;
+}
+
+.card-explore:hover {
+    color: #ffffff;
+    letter-spacing: 3px;
+}
+
+/* ====================================================
+   Subtle Thematic Accents (Not too bright)
+   Matches website's gradient palette: Amber, Coral, Teal, Violet
+   ==================================================== */
+
+/* 1. My Recents (Gold/Amber Accent) */
+.card-plum .card-badge {
+    border-left-color: rgba(245, 200, 66, 0.5);
+    background: rgba(50, 48, 40, 0.75); /* slightly warm tint */
+}
+.card-plum .card-explore:hover {
+    color: #f5c842;
+}
+.card-plum:hover::before {
+    box-shadow: inset 0 1px 1px rgba(245, 200, 66, 0.35), 
+                0 28px 60px rgba(0, 0, 0, 0.7),
+                0 15px 40px rgba(245, 200, 66, 0.08); /* Subtle colored glow */
+}
+
+/* 2. Education (Coral Accent) */
+.card-navy .card-badge {
+    border-left-color: rgba(232, 68, 90, 0.5);
+    background: rgba(50, 38, 42, 0.75); /* slightly red tint */
+}
+.card-navy .card-explore:hover {
+    color: #e8445a;
+}
+.card-navy:hover::before {
+    box-shadow: inset 0 1px 1px rgba(232, 68, 90, 0.35), 
+                0 28px 60px rgba(0, 0, 0, 0.7),
+                0 15px 40px rgba(232, 68, 90, 0.08);
+}
+
+/* 3. Fitness & Sports (Teal/Green Accent) */
+.card-forest .card-badge {
+    border-left-color: rgba(0, 201, 167, 0.5);
+    background: rgba(35, 48, 46, 0.75); /* slightly green tint */
+}
+.card-forest .card-explore:hover {
+    color: #00c9a7;
+}
+.card-forest:hover::before {
+    box-shadow: inset 0 1px 1px rgba(0, 201, 167, 0.35), 
+                0 28px 60px rgba(0, 0, 0, 0.7),
+                0 15px 40px rgba(0, 201, 167, 0.08);
+}
+
+/* 4. Gaming (Violet Accent) */
+.card-indigo .card-badge {
+    border-left-color: rgba(123, 97, 255, 0.5);
+    background: rgba(42, 38, 52, 0.75); /* slightly purple tint */
+}
+.card-indigo .card-explore:hover {
+    color: #9d85ff;
+}
+.card-indigo:hover::before {
+    box-shadow: inset 0 1px 1px rgba(123, 97, 255, 0.35), 
+                0 28px 60px rgba(0, 0, 0, 0.7),
+                0 15px 40px rgba(123, 97, 255, 0.08);
+}
+
+/* 5. Travels (Ocean Blue Accent) */
+.card-teal .card-badge {
+    border-left-color: rgba(14, 165, 233, 0.5);
+    background: rgba(36, 44, 52, 0.75); /* slightly blue tint */
+}
+.card-teal .card-explore:hover {
+    color: #38bdf8;
+}
+.card-teal:hover::before {
+    box-shadow: inset 0 1px 1px rgba(14, 165, 233, 0.35), 
+                0 28px 60px rgba(0, 0, 0, 0.7),
+                0 15px 40px rgba(14, 165, 233, 0.08);
+}
+
+
+/* ====================================================
+   Responsive overrides
+   ==================================================== */
+
+@media screen and (max-width: 1100px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        width: 90vw;
+        padding-top: 30px;
+        padding-left: 26px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;          
+        width: 96vw;
+        padding-top: 20px;
+        padding-left: 18px; /* just enough for the -18px badge pop */
+        margin-bottom: 60px;
+    }
+    
+    .study-card::before {
+        top: 55px; /* less overhang on mobile */
+    }
+
+    .card-img-wrap {
+        top: 0;
+        height: 180px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .card-badge {
+        top: 140px;
+        left: -18px;
+        max-width: 88%;
+        padding: 12px 18px 11px 14px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+        white-space: normal;
+    }
+
+    .card-body-content {
+        margin-top: 195px;
+        padding: 16px 20px 24px 20px;
+    }
+
+    .card-text {
+        font-size: 0.88rem;
+        line-height: 1.65;
+    }
+}
+

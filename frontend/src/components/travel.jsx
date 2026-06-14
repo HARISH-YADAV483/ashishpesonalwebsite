@@ -1,19 +1,42 @@
+import React, { useRef, useLayoutEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CategoryList from './CategoryList';
-import './travel.css';
-import './hobbies.css';
+import travelImg from '../assets/travel.jpg';
+import './cinematic.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Travel = () => {
+    const containerRef = useRef(null);
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+        const ctx = gsap.context(() => {
+            gsap.utils.toArray('.reveal').forEach((el) => {
+                gsap.to(el, {
+                    y: 0, opacity: 1, duration: 0.7, ease: 'power2.out',
+                    scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+                });
+            });
+        }, containerRef);
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <div className="hobbies-page">
-            <div className="hobbies-hero">
-                <h1>Exploring & <span className="green">Travel</span></h1>
-                <h3 style={{ margin: '15px 0', color: '#e0e0e0', fontWeight: '500' }}>My Journeys</h3>
-                <p>Welcome to the travel section. This is an additional paragraph about travels.</p>
-                <p style={{ marginTop: '10px', color: '#b0b3b8' }}>
-                    Traveling allows me to explore new places, cultures, and perspectives that broaden my understanding of the world. Each journey shapes my outlook on life.
-                </p>
+        <div className="home-container" ref={containerRef}>
+            <div className="page-split">
+                <div>
+                    <span className="page-eyebrow reveal">Exploring & Travel</span>
+                    <h1 className="page-title reveal">Exploring<br />Horizons</h1>
+                    <p className="page-lead reveal">
+                        Traveling broadens my perspective on cultures and traditions. Each journey refreshes my mind, inspires curiosity, and creates unforgettable memories that shape my outlook on life.
+                    </p>
+                </div>
+                <div className="page-image-panel reveal">
+                    <img src={travelImg} alt="Travel" loading="lazy" />
+                </div>
             </div>
-            
             <CategoryList category="Travel" />
         </div>
     );

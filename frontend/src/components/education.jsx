@@ -1,61 +1,81 @@
-import './education.css';
-import { useEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import collage from '../assets/copy.png';
+import './cinematic.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Education = () => {
-    // Scroll to top when component mounts
-    useEffect(() => {
+    const containerRef = useRef(null);
+
+    useLayoutEffect(() => {
         window.scrollTo(0, 0);
+        const ctx = gsap.context(() => {
+            gsap.utils.toArray('.reveal').forEach((el) => {
+                gsap.to(el, {
+                    y: 0, opacity: 1, duration: 0.7, ease: 'power2.out',
+                    scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+                });
+            });
+        }, containerRef);
+        return () => ctx.revert();
     }, []);
 
+    const timeline = [
+        {
+            index: '01',
+            year: 'Nursery — 12th Grade',
+            title: 'Schooling',
+            institution: 'Eureka Public School',
+            body: 'I developed a strong academic and extracurricular foundation here, consistently achieving good grades in both 10th and 12th examinations. Alongside academics, I was an active athlete and participated enthusiastically in sports. During my 12th grade, I successfully cleared the NDA exam — a significant milestone.',
+        },
+        {
+            index: '02',
+            year: 'Graduated',
+            title: 'Bachelor of Science',
+            institution: 'Ramjas College, University of Delhi',
+            body: 'I pursued my B.Sc. after qualifying the competitive CUET examination. During my time at college, I strengthened academic knowledge, explored new concepts, and developed critical thinking skills. I actively participated in various extracurricular activities, growing both personally and professionally.',
+        },
+        {
+            index: '03',
+            year: 'Present',
+            title: 'Master of Science',
+            institution: 'University of Delhi',
+            body: 'Currently pursuing my Master\'s degree in Science with a specialization in Chemistry. I am deeply focused on advanced research, expanding my analytical capabilities, and exploring complex chemical phenomena. Stay tuned for upcoming updates.',
+        },
+    ];
+
     return (
-        <div className="education-page">
-            <div className="education-header">
-                <h1>My <span className="highlight-text">Education</span> & Learnings</h1>
-                <p className="education-intro">
-                    Education has been a defining part of my journey. I completed my Bachelor of Science from Ramjas College, building a strong academic base. Currently, I am pursuing my Master of Science at Delhi University, where I am enhancing my knowledge, sharpening my analytical skills, and focusing on research to achieve excellence.
-                </p>
-            </div>
-
-            <div className="timeline-container">
-                <div className="timeline-item">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-content">
-                        <div className="timeline-icon">📖</div>
-                        <h2>Schooling</h2>
-                        <span className="timeline-date">Nursery &mdash; 12th Grade</span>
-                        <h4 className="timeline-institution">Eureka Public School</h4>
-                        <p>
-                            I developed a strong academic and extracurricular foundation here, consistently achieving good grades in both my 10th and 12th examinations. Alongside academics, I was an active athlete and participated enthusiastically in sports. During my 12th grade, I successfully cleared the NDA exam, marking a significant milestone in my early academic journey.
-                        </p>
-                    </div>
+        <div className="home-container" ref={containerRef}>
+            {/* Page Split Hero */}
+            <div className="page-split">
+                <div>
+                    <span className="page-eyebrow reveal">Education</span>
+                    <h1 className="page-title reveal">The Foundation</h1>
+                    <p className="page-lead reveal">
+                        Education has been a defining part of my journey — from school excellence to rigorous university research. A continuous pursuit of knowledge.
+                    </p>
                 </div>
-
-                <div className="timeline-item">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-content">
-                        <div className="timeline-icon">🎓</div>
-                        <h2>Bachelor of Science</h2>
-                        <span className="timeline-date">Graduated</span>
-                        <h4 className="timeline-institution">Ramjas College, University of Delhi</h4>
-                        <p>
-                            I pursued my Bachelor of Science after qualifying the highly competitive CUET examination. Gaining admission was a proud achievement for me. During my time at college, I strengthened my academic knowledge, explored new concepts, and developed critical thinking skills. I actively participated in various extracurricular activities, growing both personally and professionally.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="timeline-item">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-content">
-                        <div className="timeline-icon">🔬</div>
-                        <h2>Master of Science</h2>
-                        <span className="timeline-date">Present</span>
-                        <h4 className="timeline-institution">University of Delhi</h4>
-                        <p>
-                            Currently pursuing my Master's degree in Science with a specialization in Chemistry. I am deeply focused on advanced research, expanding my analytical capabilities, and exploring complex chemical phenomena. Stay tuned for upcoming updates!
-                        </p>
-                    </div>
+                <div className="page-image-panel reveal">
+                    <img src={collage} alt="Education" loading="lazy" />
                 </div>
             </div>
+
+            {/* Timeline */}
+            <section className="timeline-section">
+                {timeline.map((item) => (
+                    <div className="timeline-entry reveal" key={item.index}>
+                        <div className="timeline-index">{item.index}</div>
+                        <div className="timeline-content">
+                            <span className="timeline-year">{item.year}</span>
+                            <h2 className="timeline-title">{item.title}</h2>
+                            <span className="timeline-institution">{item.institution}</span>
+                            <p className="timeline-body">{item.body}</p>
+                        </div>
+                    </div>
+                ))}
+            </section>
         </div>
     );
 };

@@ -1,17 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import navbar from '../assets/ashi.png'
 import './home.css'
 
 const Navbar = () => {
     const [showDiv, setShowDiv] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
     const toggleDiv = () => {
         setShowDiv(prev => !prev);
     };
 
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
     return (
         <>
-            <div className="navbaru">
+            <div className={`navbaru${scrolled ? ' scrolled' : ''}`}>
                 <div className="navbar">
                     <div className="lefto"><a href="/"><img src={navbar} alt="golu" className="logo" /></a></div>
                     <div className="righto2">
